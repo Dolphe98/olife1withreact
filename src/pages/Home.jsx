@@ -30,11 +30,11 @@ export default function Home() {
   const latestPosts = blogData.slice(0, 3);
 
   return (
-    <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 space-y-24 md:space-y-32">
+    <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 space-y-32 md:space-y-48">
       
       {/* SECTION 1: HERO */}
-      <div className="flex flex-col md:flex-row items-center gap-12 relative">
-        <div className="flex-1 space-y-8 z-20 text-center md:text-left">
+      <div className="flex flex-col md:flex-row items-center gap-12 relative mb-10">
+        <div className="flex-1 space-y-8 z-30 text-center md:text-left">
           <h1 className="text-3xl md:text-5xl font-black leading-tight text-slate-100">
             Are you brave enough to see what the uncertainty and the unknown hold for us?
           </h1>
@@ -46,15 +46,25 @@ export default function Home() {
           </Link>
         </div>
         
-        {/* Fixed Image Container: We use "relative" for mobile and "absolute" only on desktop to prevent overlapping */}
-        <div className="flex-1 w-full flex justify-center items-center h-[400px] md:h-[450px] relative mt-10 md:mt-0">
-          <img src="/olife1.comsection1image1.jpg" alt="Olife Background" className="absolute top-0 right-4 md:right-10 w-48 h-64 md:w-64 md:h-80 object-cover rounded-lg shadow-2xl border border-slate-700 opacity-60 md:opacity-80" />
-          <img src="/olife1.comsection1image2.jpg" alt="Olife Foreground" className="absolute bottom-0 left-4 md:left-10 w-48 h-64 md:w-64 md:h-80 object-cover rounded-lg shadow-[0_0_30px_rgba(8,145,178,0.2)] border border-cyan-900 z-10" />
+        {/* Image Container Fix: Added 'mb-20' on mobile to ensure Section 2 is pushed down */}
+        <div className="flex-1 w-full flex justify-center items-center h-[350px] md:h-[450px] relative mt-12 md:mt-0 mb-16 md:mb-0">
+          {/* Background Image */}
+          <img 
+            src="/olife1.comsection1image1.jpg" 
+            alt="Olife Background" 
+            className="absolute top-0 right-8 md:right-10 w-44 h-60 md:w-64 md:h-80 object-cover rounded-lg shadow-2xl border border-slate-700 opacity-50 md:opacity-80 z-10" 
+          />
+          {/* Foreground Image */}
+          <img 
+            src="/olife1.comsection1image2.jpg" 
+            alt="Olife Foreground" 
+            className="absolute bottom-0 left-8 md:left-10 w-44 h-60 md:w-64 md:h-80 object-cover rounded-lg shadow-[0_0_30px_rgba(8,145,178,0.2)] border border-cyan-900 z-20" 
+          />
         </div>
       </div>
 
       {/* SECTION 2: LATEST FRAGMENTS */}
-      <div className="space-y-8">
+      <div className="space-y-8 relative z-40 bg-slate-950">
         <div className="border-b border-slate-800 pb-4">
           <Link to="/fragments" className="text-2xl md:text-3xl font-bold text-slate-100 hover:text-cyan-400 transition-colors inline-flex items-center gap-2 tracking-wide">
             Latest Fragments <span className="text-cyan-600 text-2xl">→</span>
@@ -86,7 +96,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SECTION 4: LATEST ARTICLES (Brought Back) */}
+      {/* SECTION 4: LATEST ARTICLES */}
       <div className="space-y-12">
         <div className="border-b border-slate-800 pb-4">
           <Link to="/blog" className="text-2xl md:text-3xl font-bold text-slate-100 hover:text-cyan-400 transition-colors inline-flex items-center gap-2 tracking-wide">
@@ -108,7 +118,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* The Final Join Us Button (Brought Back) */}
         <div className="pt-10 flex justify-center">
             <Link to="/contact" className="px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-slate-50 font-bold rounded-full transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] uppercase tracking-widest text-xs md:text-sm">
                 Join Us
