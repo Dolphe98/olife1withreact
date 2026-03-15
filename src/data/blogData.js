@@ -1,7 +1,7 @@
 export const blogData = [
   {
     id: 1,
-    title: "The Separation of the Only One S1E1",
+    title: "The Separation of the Only One",
     excerpt: "Explore the origins of the universe through the deliberate separation of the Only One into three distinct entities...",
     date: "15 March 2026",
     image: "/Olife1.comBlogposts1e1.png",
@@ -31,8 +31,8 @@ export const blogData = [
       
       <p class="mt-8">Together, the receiver processes the reality, the Hand executes the will, and the intelligence communicates the grand design. Though they are now three, they work in perfect harmony.</p>
       
-      <div class="mt-16 text-center">
-        <p class="text-2xl md:text-3xl text-cyan-500" style="font-family: 'Georgia', serif; font-style: italic; letter-spacing: 0.1em;">To be continued …</p>
+      <div class="mt-20 text-center">
+        <p class="text-2xl md:text-4xl text-cyan-500" style="font-family: 'Times New Roman', Times, serif; font-style: italic; letter-spacing: 0.15em; font-weight: 300;">To be continued …</p>
       </div>
     `
   }
