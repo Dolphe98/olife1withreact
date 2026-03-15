@@ -4,6 +4,8 @@ import Home from './pages/Home'
 import Fragments from './pages/Fragments'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import About from './pages/About'
+import Contact from './pages/Contact' // Added the Final Import
 
 function App() {
   return (
@@ -14,19 +16,12 @@ function App() {
 
         <main>
           <Routes>
-            {/* Main Home Page */}
             <Route path="/" element={<Home />} />
-            
-            {/* Fragments Page */}
             <Route path="/fragments" element={<Fragments />} />
-
-            {/* Blog System */}
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:id" element={<BlogPost />} />
-
-            {/* Placeholder Routes for remaining pages */}
-            <Route path="/about" element={<div className="p-20 text-center text-2xl text-slate-500 font-black uppercase tracking-widest">About Page Coming Soon</div>} />
-            <Route path="/contact" element={<div className="p-20 text-center text-2xl text-slate-500 font-black uppercase tracking-widest">Contact Page Coming Soon</div>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} /> {/* Activated the Final Route */}
           </Routes>
         </main>
 
