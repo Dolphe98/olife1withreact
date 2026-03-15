@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import Home from './pages/Home'
 import Fragments from './pages/Fragments'
+import Blog from './pages/Blog'
+import BlogPost from './pages/BlogPost'
 
 function App() {
   return (
@@ -15,13 +17,16 @@ function App() {
             {/* Main Home Page */}
             <Route path="/" element={<Home />} />
             
-            {/* Fragments Page (The one you just built) */}
+            {/* Fragments Page */}
             <Route path="/fragments" element={<Fragments />} />
 
-            {/* Placeholder Routes for the other pages */}
-            <Route path="/blog" element={<div className="p-20 text-center text-2xl text-slate-500">Blog Page Coming Soon</div>} />
-            <Route path="/about" element={<div className="p-20 text-center text-2xl text-slate-500">About Page Coming Soon</div>} />
-            <Route path="/contact" element={<div className="p-20 text-center text-2xl text-slate-500">Contact Page Coming Soon</div>} />
+            {/* Blog System */}
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogPost />} />
+
+            {/* Placeholder Routes for remaining pages */}
+            <Route path="/about" element={<div className="p-20 text-center text-2xl text-slate-500 font-black uppercase tracking-widest">About Page Coming Soon</div>} />
+            <Route path="/contact" element={<div className="p-20 text-center text-2xl text-slate-500 font-black uppercase tracking-widest">Contact Page Coming Soon</div>} />
           </Routes>
         </main>
 
