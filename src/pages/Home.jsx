@@ -1,33 +1,11 @@
 import { Link } from 'react-router-dom';
 import { fragmentsData } from '../data/fragmentsData';
-
-const blogData = [
-  {
-    id: 1,
-    title: "The Architecture of the Unknown",
-    excerpt: "Exploring the hidden structures of our imagination and how they shape our reality...",
-    date: "15 March 2026",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    title: "Silent Echoes: A Study in Duality",
-    excerpt: "Why the balance between light and dark is essential for a creative sanctuary...",
-    date: "28 February 2026",
-    image: "https://images.unsplash.com/photo-1502134249126-9f3755a50d78?q=80&w=800&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "The Gateway to Infinite Discovery",
-    excerpt: "Embracing the state of openness that encourages constant growth...",
-    date: "10 February 2026",
-    image: "https://images.unsplash.com/photo-1462331940025-496dfbfc7564?q=80&w=800&auto=format&fit=crop"
-  }
-];
+import { blogData } from '../data/blogData'; // Pulling from the shared data file
 
 export default function Home() {
+  // Get the last 3 fragments and the last 3 blog posts from our shared data
   const latestFragments = fragmentsData ? fragmentsData.slice(0, 3) : [];
-  const latestPosts = blogData.slice(0, 3);
+  const latestPosts = blogData ? blogData.slice(0, 3) : [];
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 space-y-32 md:space-y-48">
@@ -46,15 +24,12 @@ export default function Home() {
           </Link>
         </div>
         
-        {/* Image Container Fix: Added 'mb-20' on mobile to ensure Section 2 is pushed down */}
         <div className="flex-1 w-full flex justify-center items-center h-[350px] md:h-[450px] relative mt-12 md:mt-0 mb-16 md:mb-0">
-          {/* Background Image */}
           <img 
             src="/olife1.comsection1image1.jpg" 
             alt="Olife Background" 
             className="absolute top-0 right-8 md:right-10 w-44 h-60 md:w-64 md:h-80 object-cover rounded-lg shadow-2xl border border-slate-700 opacity-50 md:opacity-80 z-10" 
           />
-          {/* Foreground Image */}
           <img 
             src="/olife1.comsection1image2.jpg" 
             alt="Olife Foreground" 
@@ -96,7 +71,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* SECTION 4: LATEST ARTICLES */}
+      {/* SECTION 4: LATEST ARTICLES - Now linked to Single Posts */}
       <div className="space-y-12">
         <div className="border-b border-slate-800 pb-4">
           <Link to="/blog" className="text-2xl md:text-3xl font-bold text-slate-100 hover:text-cyan-400 transition-colors inline-flex items-center gap-2 tracking-wide">
@@ -106,7 +81,7 @@ export default function Home() {
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {latestPosts.map((post) => (
-            <Link key={post.id} to="/blog" className="group flex flex-col space-y-4">
+            <Link key={post.id} to={`/blog/${post.id}`} className="group flex flex-col space-y-4">
               <div className="overflow-hidden rounded-xl h-56 border border-slate-800 shadow-lg">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
               </div>
