@@ -17,7 +17,7 @@ export default function Home() {
             Are you brave enough to see what the uncertainty and the unknown hold for us?
           </h1>
           <p className="text-lg md:text-xl text-cyan-400 font-medium tracking-wide">
-            This path is not for everybody; it is reserved for the brave one only.
+            This path is not for everybody; it is reserved for the brave ones only.
           </p>
           <Link to="/contact" className="inline-block px-8 py-3 bg-cyan-600 hover:bg-cyan-500 text-slate-50 font-bold rounded transition-all shadow-[0_0_15px_rgba(8,145,178,0.4)]">
             Join Us
