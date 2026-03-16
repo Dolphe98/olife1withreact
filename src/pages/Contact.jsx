@@ -7,10 +7,8 @@ export default function Contact() {
   const [buttonText, setButtonText] = useState("Send Message");
 
   const onSubmit = async (event) => {
-    // 1. Stops the page from reloading
-    event.preventDefault(); 
+    event.preventDefault();
 
-    // 2. The Shield
     if (!captchaValue) {
       alert("Please verify that you are a human by checking the reCAPTCHA box.");
       return;
@@ -18,36 +16,30 @@ export default function Contact() {
 
     setButtonText("Sending...");
 
-    // 3. Package the data exactly how Web3Forms wants it
     const formData = new FormData(event.target);
     
-    // Remove the Google ReCAPTCHA code so Web3Forms doesn't reject it
-    formData.delete("g-recaptcha-response");
-
-    // Add your keys
+    // Web3Forms Keys
     formData.append("access_key", "3b196b3a-8467-4f08-ba11-7a0cc495b85f");
     formData.append("from_name", "Olife Sanctuary");
 
     try {
-      // 4. Send the raw FormData (No JSON conversion!)
+      // The most basic, raw fetch request possible
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: formData
       });
 
-      const data = await response.json();
-
-      if (data.success) {
+      // We just check if the HTTP status is 200 (OK)
+      if (response.ok) {
         alert("Message sent successfully! We will reach out soon.");
         event.target.reset(); 
         setCaptchaValue(null); 
-        setButtonText("Send Message");
       } else {
-        alert("Web3Forms Error: " + data.message);
-        setButtonText("Send Message");
+        alert("Server Error. Please try again later.");
       }
     } catch (error) {
-      alert("Network Error: Something went wrong.");
+      alert("Error: Check your internet connection or ad-blocker.");
+    } finally {
       setButtonText("Send Message");
     }
   };
