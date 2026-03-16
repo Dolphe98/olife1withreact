@@ -4,7 +4,7 @@ import { blogData } from '../data/blogData';
 
 export default function BlogPost() {
   const { id } = useParams();
-  const post = blogData.find((item) => item.id === parseInt(id));
+  const post = blogData.find((item) => String(item.id) === String(id));
 
   // SEO Injection
   useEffect(() => {
