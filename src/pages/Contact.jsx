@@ -17,28 +17,31 @@ export default function Contact() {
     setButtonText("Sending...");
 
     const formData = new FormData(event.target);
-    
-    // Web3Forms Keys
-    formData.append("access_key", "3b196b3a-8467-4f08-ba11-7a0cc495b85f");
-    formData.append("from_name", "Olife Sanctuary");
 
     try {
-      // The most basic, raw fetch request possible
-      const response = await fetch("https://api.web3forms.com/submit", {
+      // The Formspree Engine Request
+      const response = await fetch("https://formspree.io/f/xeerrora", {
         method: "POST",
-        body: formData
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
 
-      // We just check if the HTTP status is 200 (OK)
       if (response.ok) {
         alert("Message sent successfully! We will reach out soon.");
         event.target.reset(); 
         setCaptchaValue(null); 
       } else {
-        alert("Server Error. Please try again later.");
+        const data = await response.json();
+        if (Object.hasOwn(data, 'errors')) {
+          alert("Formspree Error: " + data.errors.map(error => error.message).join(", "));
+        } else {
+          alert("Server Error. Please try again later.");
+        }
       }
     } catch (error) {
-      alert("Error: Check your internet connection or ad-blocker.");
+      alert("Network Error: Please check your internet connection.");
     } finally {
       setButtonText("Send Message");
     }
@@ -95,7 +98,11 @@ export default function Contact() {
             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Last Name</label>
             <input type="text" name="Last_Name" required className="w-full bg-slate-900/50 border border-slate-800 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-cyan-600 transition-colors" placeholder="Doe" />
           </div>
-          <div className="space-y-2 md:col-span-2">
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">Email Address</label>
+            <input type="email" name="email" required className="w-full bg-slate-900/50 border border-slate-800 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-cyan-600 transition-colors" placeholder="john@example.com" />
+          </div>
+          <div className="space-y-2">
             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">WhatsApp Number (Optional)</label>
             <input type="text" name="WhatsApp_Number" className="w-full bg-slate-900/50 border border-slate-800 rounded-lg p-4 text-slate-200 focus:outline-none focus:border-cyan-600 transition-colors" placeholder="+1 000 000 000" />
           </div>
@@ -116,7 +123,7 @@ export default function Contact() {
             />
           </div>
 
-          <button type="submit" className="md:col-span-2 py-4 bg-slate-100 text-slate-950 font-black uppercase tracking-[0.3em] rounded-lg hover:bg-cyan-500 hover:text-white transition-all shadow-xl">
+          <button type="submit" className="md:col-span-2 py-4 bg-slate-100 text-slate-950 font-black uppercase tracking-[0.3em] rounded-lg hover:bg-cyan-500 hover:text-white transition-all shadow-xl disabled:opacity-50" disabled={buttonText === "Sending..."}>
             {buttonText}
           </button>
         </form>
