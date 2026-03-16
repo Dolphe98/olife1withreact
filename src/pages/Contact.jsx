@@ -4,48 +4,58 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 export default function Contact() {
   const [captchaValue, setCaptchaValue] = useState(null);
+  const [buttonText, setButtonText] = useState("Send Message");
 
   const onSubmit = async (event) => {
-    // THIS LINE STOPS THE PAGE FROM RELOADING
+    // 1. Stops the page from reloading
     event.preventDefault(); 
 
+    // 2. The Shield
     if (!captchaValue) {
       alert("Please verify that you are a human by checking the reCAPTCHA box.");
       return;
     }
 
-    const formData = new FormData(event.target);
+    setButtonText("Sending...");
 
-    // Your Web3Forms Key
+    // 3. Package the data exactly how Web3Forms wants it
+    const formData = new FormData(event.target);
+    
+    // Remove the Google ReCAPTCHA code so Web3Forms doesn't reject it
+    formData.delete("g-recaptcha-response");
+
+    // Add your keys
     formData.append("access_key", "3b196b3a-8467-4f08-ba11-7a0cc495b85f");
     formData.append("from_name", "Olife Sanctuary");
 
-    const object = Object.fromEntries(formData);
-    const json = JSON.stringify(object);
-
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
+      // 4. Send the raw FormData (No JSON conversion!)
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json"
-        },
-        body: json
-      }).then((res) => res.json());
+        body: formData
+      });
 
-      if (res.success) {
+      const data = await response.json();
+
+      if (data.success) {
         alert("Message sent successfully! We will reach out soon.");
         event.target.reset(); 
         setCaptchaValue(null); 
+        setButtonText("Send Message");
+      } else {
+        alert("Web3Forms Error: " + data.message);
+        setButtonText("Send Message");
       }
     } catch (error) {
-      alert("Something went wrong. Please try again.");
+      alert("Network Error: Something went wrong.");
+      setButtonText("Send Message");
     }
   };
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-10 md:pt-20 pb-10 space-y-24 md:space-y-32">
       
+      {/* SECTION 1: THE PHILOSOPHY */}
       <div className="max-w-4xl mx-auto text-center space-y-6">
         <h1 className="text-2xl md:text-4xl font-light text-slate-300 leading-relaxed italic">
           “At <span className="text-cyan-500 font-bold not-italic">Olife</span>, we explore deep questions, elaborate on the reasons behind them, and, more importantly, we provide a judgment-free space.”
@@ -53,6 +63,7 @@ export default function Contact() {
         <div className="w-24 h-1 bg-cyan-900 mx-auto rounded-full"></div>
       </div>
 
+      {/* SECTION 2: WHATSAPP COMMUNITY */}
       <div className="flex flex-col md:flex-row items-center gap-12 bg-slate-900/20 border border-slate-800 p-8 md:p-16 rounded-3xl shadow-2xl">
         <div className="flex-1 space-y-8">
           <h2 className="text-3xl md:text-4xl font-black text-slate-100 uppercase tracking-tighter">
@@ -76,13 +87,13 @@ export default function Contact() {
         </div>
       </div>
 
+      {/* SECTION 3: CONTACT FORM */}
       <div className="max-w-3xl mx-auto space-y-12">
         <div className="text-center space-y-2">
           <h3 className="text-2xl font-bold text-slate-100 uppercase tracking-widest">Send a Message</h3>
           <p className="text-slate-500 text-sm tracking-widest uppercase">We value your curiosity</p>
         </div>
 
-        {/* Notice onSubmit={onSubmit} is attached here! */}
         <form onSubmit={onSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="space-y-2">
             <label className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em] ml-2">First Name</label>
@@ -114,11 +125,12 @@ export default function Contact() {
           </div>
 
           <button type="submit" className="md:col-span-2 py-4 bg-slate-100 text-slate-950 font-black uppercase tracking-[0.3em] rounded-lg hover:bg-cyan-500 hover:text-white transition-all shadow-xl">
-            Send Message
+            {buttonText}
           </button>
         </form>
       </div>
 
+      {/* SECTION 4: NEWSLETTER */}
       <div className="bg-cyan-950/20 border border-cyan-900/30 rounded-3xl p-8 md:p-16 text-center space-y-8">
         <div className="space-y-4">
           <h2 className="text-3xl font-black text-slate-100 uppercase tracking-tighter">The Newsletter</h2>
@@ -134,6 +146,7 @@ export default function Contact() {
         </div>
       </div>
 
+      {/* FOOTER */}
       <footer className="pt-20 border-t border-slate-900 flex flex-col space-y-10">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <Link to="/" className="text-2xl font-black text-slate-100 tracking-tighter hover:text-cyan-400 transition-colors">
