@@ -11,7 +11,13 @@ export default function Header() {
         {/* ROW 1: Logo, Desktop Nav + Join Us, Mobile Toggle */}
         <div className="flex justify-between items-center">
           <Link to="/" className="hover:opacity-80 transition-opacity">
-            <img src="/olife1logo.png" alt="Olife Logo" className="h-10 w-auto object-contain" />
+            <img 
+              src="/olife1logo.png" 
+              alt="Olife Logo" 
+              width="40" 
+              height="40" 
+              className="h-10 w-auto object-contain" 
+            />
           </Link>
 
           {/* DESKTOP MENU (Hidden on Mobile) */}
@@ -22,15 +28,18 @@ export default function Header() {
               <Link to="/about" className="hover:text-cyan-400 transition-colors">About</Link>
               <Link to="/contact" className="hover:text-cyan-400 transition-colors">Contact</Link>
             </div>
-            <Link to="/contact" className="px-5 py-2 bg-cyan-600 hover:bg-cyan-500 text-slate-50 text-[10px] font-bold uppercase tracking-widest rounded transition-all">
+            {/* Updated bg-cyan-700 for better contrast */}
+            <Link to="/contact" className="px-5 py-2 bg-cyan-700 hover:bg-cyan-600 text-slate-50 text-[10px] font-bold uppercase tracking-widest rounded transition-all">
               Join Us
             </Link>
           </div>
 
-          {/* MOBILE TOGGLE (3 BARS) */}
+          {/* MOBILE TOGGLE (3 BARS) - Fixed with ARIA labels */}
           <button 
             className="md:hidden text-slate-100 focus:outline-none"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close Menu" : "Open Menu"}
+            aria-expanded={isOpen}
           >
             <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isOpen ? (
@@ -49,20 +58,26 @@ export default function Header() {
             <Link to="/blog" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest text-slate-300">Blog</Link>
             <Link to="/about" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest text-slate-300">About</Link>
             <Link to="/contact" onClick={() => setIsOpen(false)} className="text-sm font-bold uppercase tracking-widest text-slate-300">Contact</Link>
-            <Link to="/contact" onClick={() => setIsOpen(false)} className="w-full text-center py-3 bg-cyan-600 text-slate-50 font-bold uppercase tracking-widest rounded">
+            {/* Updated bg-cyan-700 */}
+            <Link to="/contact" onClick={() => setIsOpen(false)} className="w-full text-center py-3 bg-cyan-700 text-slate-50 font-bold uppercase tracking-widest rounded">
               Join Us
             </Link>
           </div>
         )}
 
-        {/* ROW 2: Site Name & Socials (Standard Layout) */}
+        {/* ROW 2: Site Name & Socials */}
         <div className="flex justify-between items-center mt-4 border-t border-slate-900 pt-4">
           <div className="w-10 hidden md:block"></div>
           <Link to="/" className="text-2xl md:text-4xl font-black text-cyan-500 tracking-[0.15em] uppercase mx-auto">
             Olife
           </Link>
           <div className="flex gap-4 w-10 justify-end">
-            <a href="#" className="text-slate-500"><svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+            {/* Fixed empty link with aria-label */}
+            <a href="#" aria-label="Follow us on Facebook" className="text-slate-500">
+              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/>
+              </svg>
+            </a>
           </div>
         </div>
 

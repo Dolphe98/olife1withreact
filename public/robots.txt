@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://olife1.com/sitemap.xml
