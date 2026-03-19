@@ -1,5 +1,42 @@
 export const blogData = [
   {
+    id: 2,
+    title: "The Infinite Waters S1E1",
+    excerpt: "Discover the monumental horizontal division of the infinite waters and the creation of the mirrored universe, a divine gift for The Hand...",
+    date: "19 March 2026",
+    image: "/Olife1.comBlogposts1e2.png", // NOTE: Ensure you add this image to your public folder!
+    seoTitle: "The Infinite Waters S1E1: The Great Divide and the Mirrored Universe | Olife",
+    seoDescription: "Read about the horizontal division of the infinite waters, the creation of the mirrored universe, and the grand design intended as the ultimate prize for The Hand.",
+    seoKeywords: "Infinite waters, The Hand, mirrored universe, Only One, spiritual fiction, creation story, Olife Chronicles",
+    content: `
+      <p>Once upon a time, within the grand design of the Only One, there existed the infinite waters. This boundless ocean of existence stretched endlessly, containing the potential for all things.</p>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mt-12 mb-6 border-b border-slate-800 pb-2">The Horizontal Divide</h2>
+      <p>By the supreme will of the Only One, the infinite water was separated. However, this was not a division that diminished its infiniteness or created boundaries. Instead, the separation occurred horizontally. Because the waters were divided in this precise, infinite manner, both the expanse above and the expanse below retained their limitless nature. They were split, yet they both remained completely infinite.</p>
+      
+      <p class="mt-6">Following this monumental division, the Only One chose to remain still, taking its eternal place upon the waters above. In this higher realm, the ultimate presence rested in perfect serenity, watching over the vast expanse.</p>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mt-12 mb-6 border-b border-slate-800 pb-2">The Mirrored Universe</h2>
+      <p>Meanwhile, a magnificent transformation began to unfold within the waters that lay beneath. Guided by the grand design, the lower waters began to shift and take shape, forming a brand new universe similar to the one above.</p>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mt-12 mb-6 border-b border-slate-800 pb-2">The Masterpiece and the Prize</h2>
+      <p>This mirrored universe below was not created without a specific, profound purpose. It was designed as an ultimate prize, a divine gift intended specifically for The Hand.</p>
+      
+      <p class="mt-6">Because The Hand was the entity responsible for executing the will of the Only One, it was The Hand who actually built everything—every structure, every expanse, and every detail. Therefore, the universe itself became both his masterpiece and his ultimate reward. The very work he poured into creation was the prize he was meant to inherit and rule.</p>
+      
+      <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mt-12 mb-6 border-b border-slate-800 pb-2">The Unfinished Celebration</h2>
+      <p>To honor this monumental achievement, a grand ceremony was planned. It was to be a glorious inauguration across the cosmos to celebrate The Hand's flawless work and to officially bestow upon him the magnificent universe he had built.</p>
+      
+      <p class="mt-6">The stage was set, the universe was complete, and everything resonated in a state of absolute, perfect harmony. Everything was fine...</p>
+      
+      <p class="mt-6 italic text-slate-400">Until something happened that changed everything.</p>
+      
+      <div class="mt-20 text-center">
+        <p class="text-2xl md:text-4xl text-cyan-500" style="font-family: 'Times New Roman', Times, serif; font-style: italic; letter-spacing: 0.15em; font-weight: 300;">To be continued …</p>
+      </div>
+    `
+  },
+  {
     id: 1,
     title: "The Separation of the Only One",
     excerpt: "Explore the origins of the universe through the deliberate separation of the Only One into three distinct entities...",

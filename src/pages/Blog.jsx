@@ -41,7 +41,8 @@ export default function Blog() {
       {/* SECTION 3: JOIN US BEFORE FOOTER */}
       <div className="pt-20 flex flex-col items-center space-y-8 border-t border-slate-900">
           <h2 className="text-2xl font-bold text-slate-100 uppercase tracking-widest text-center">Ready to join the brave ones?</h2>
-          <Link to="/contact" className="px-10 py-4 bg-cyan-600 hover:bg-cyan-500 text-slate-50 font-bold rounded-full transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] uppercase tracking-widest text-xs">
+          {/* SEO/Accessibility Fix applied here: changed bg-cyan-600 to bg-cyan-700 */}
+          <Link to="/contact" className="px-10 py-4 bg-cyan-700 hover:bg-cyan-600 text-slate-50 font-bold rounded-full transition-all shadow-[0_0_20px_rgba(8,145,178,0.4)] uppercase tracking-widest text-xs">
               Join Us
           </Link>
       </div>
