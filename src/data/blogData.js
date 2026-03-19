@@ -1,7 +1,7 @@
 export const blogData = [
   {
     id: 2,
-    title: "The Infinite Waters S1E1",
+    title: "The Infinite Waters",
     excerpt: "Discover the monumental horizontal division of the infinite waters and the creation of the mirrored universe, a divine gift for The Hand...",
     date: "19 March 2026",
     image: "/Olife1.comBlogposts1e2.png", // NOTE: Ensure you add this image to your public folder!
