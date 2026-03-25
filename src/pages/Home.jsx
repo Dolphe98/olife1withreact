@@ -61,7 +61,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-l from-slate-950 via-transparent to-transparent"></div>
         </div>
         <div className="md:w-3/5 p-8 md:p-16 space-y-6">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">I am <span className="text-cyan-500">Deroselin Rodolphe</span>.</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-100">I am <span className="text-cyan-500">Deroselin Rodolphe</span></h2>
           <p className="text-lg md:text-xl text-slate-400 leading-relaxed font-light">
             We bring you this sanctuary, <span className="text-slate-100 font-semibold">Olife</span>: a space where your imagination is welcomed and valued. 
           </p>

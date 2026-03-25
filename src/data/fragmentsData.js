@@ -1,5 +1,11 @@
 export const fragmentsData = [
   {
+    id: 4,
+    image: "/dust-combination-everything-exist-olife-fragment4.png",
+    title: "The Dust of Existence",
+    altText: "Olife fragment - The dust is a combination of everything that exists"
+  },
+  {
     id: 3,
     image: "/no-witness-dark-side-olife-fragments3.png", 
     title: "No Witness Dark Side", 
@@ -16,6 +22,5 @@ export const fragmentsData = [
     image: "/DONTEVERFORGETfragments1.png",
     title: "Don't Ever Forget",
     altText: "Olife fragment - don't ever forget"
-  },
-  // Add 7 more here in the future to reach 10!
+  }
 ];

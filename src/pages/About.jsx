@@ -21,7 +21,7 @@ export default function About() {
         </div>
         <div className="flex-1 space-y-6">
           <h2 className="text-2xl md:text-3xl font-bold text-slate-100 border-l-4 border-cyan-600 pl-6">
-            I am Deroselin Rodolphe.
+            I am Deroselin Rodolphe
           </h2>
           <p className="text-lg text-slate-400 leading-relaxed font-light">
             We bring you this sanctuary, <span className="text-slate-100 font-medium">Olife</span>: a space where your imagination is welcomed and valued. Here, we let our imagination guide us without judgment. We do not seek final answers; instead, we embrace a state of openness that encourages constant discovery.
