@@ -30,7 +30,7 @@ export default function Blog() {
               <h3 className="text-xl font-bold text-slate-100 group-hover:text-cyan-400 transition-colors leading-snug">
                 {post.title}
               </h3>
-              <span className="text-[10px] font-bold text-slate-500 uppercase tracking-[0.2em]">
+              <span className="text-[10px] font-bold text-slate-400 uppercase tracking-[0.2em]">
                 {post.date}
               </span>
             </div>
