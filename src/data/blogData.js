@@ -1,14 +1,16 @@
 export const blogData = [
   {
     id: 3,
-    title: "What If the Sky is a Vault?",
+    title: "S1E2: What If the Sky is a Vault?",
     excerpt: "Science says reaching the edge of the universe takes millions of years. But what if the 'sky' described in Genesis requires a different kind of technology to cross?",
     date: "29 March 2026",
     image: "/Olife1.comBlogpostsarticles3s1e2.png",
-    seoTitle: "What If the Sky is a Vault? Crossing the Horizontal Divide | Olife",
+    seoTitle: "What If the Sky is a Vault? S1E2: Crossing the Horizontal Divide | Olife",
     seoDescription: "Science says reaching the edge of the universe takes millions of years. But what if the 'sky' described in Genesis requires a different kind of technology to cross?",
     seoKeywords: "Genesis Vault, Waters Above, Human Consciousness, Space Travel Science, Olife, The Horizontal Divide, Inner Technology",
     content: `
+      <h2 class="text-lg md:text-xl font-bold text-cyan-500 mb-4 tracking-widest uppercase">S1E2</h2>
+      
       <p>What if the story of creation holds a literal Blueprint for the structure of our reality?</p>
       
       <h2 class="text-2xl md:text-3xl font-bold text-slate-100 mt-12 mb-6 border-b border-slate-800 pb-2">The Ancient Blueprint</h2>
