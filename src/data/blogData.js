@@ -5,7 +5,7 @@ export const blogData = [
     excerpt: "Science says reaching the edge of the universe takes millions of years. But what if the 'sky' described in Genesis requires a different kind of technology to cross?",
     date: "29 March 2026",
     image: "/Olife1.comBlogpostsarticles3s1e2.png",
-    seoTitle: "What If the Sky is a Vault? S1E2: Crossing the Horizontal Divide | Olife",
+    seoTitle: "What If the Sky is a Vault?: Crossing the Horizontal Divide | Olife",
     seoDescription: "Science says reaching the edge of the universe takes millions of years. But what if the 'sky' described in Genesis requires a different kind of technology to cross?",
     seoKeywords: "Genesis Vault, Waters Above, Human Consciousness, Space Travel Science, Olife, The Horizontal Divide, Inner Technology",
     content: `
