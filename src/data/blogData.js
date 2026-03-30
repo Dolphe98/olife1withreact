@@ -1,7 +1,7 @@
 export const blogData = [
   {
     id: 3,
-    title: "S1E2: What If the Sky is a Vault?",
+    title: "What If the Sky is a Vault? S1E2 ",
     excerpt: "Science says reaching the edge of the universe takes millions of years. But what if the 'sky' described in Genesis requires a different kind of technology to cross?",
     date: "29 March 2026",
     image: "/Olife1.comBlogpostsarticles3s1e2.png",
