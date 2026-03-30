@@ -32,9 +32,14 @@ export default function BlogPost() {
             ← Back to Latest Posts
           </Link>
           
-          {/* TITLE WITH S1E1 */}
+          {/* TITLE WITH DYNAMIC EPISODE TAG */}
           <h1 className="text-3xl md:text-5xl font-black text-slate-100 leading-tight">
-            {post.title} <span className="text-cyan-500 text-xl md:text-3xl tracking-widest uppercase font-light border-l-2 border-cyan-800 pl-4 ml-2">S1E1</span>
+            {post.title} 
+            {post.episode && (
+              <span className="text-cyan-500 text-xl md:text-3xl tracking-widest uppercase font-light border-l-2 border-cyan-800 pl-4 ml-2">
+                {post.episode}
+              </span>
+            )}
           </h1>
           
           <p className="text-slate-500 font-bold uppercase tracking-[0.2em] text-[10px]">
